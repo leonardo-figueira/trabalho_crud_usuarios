@@ -1,0 +1,25 @@
+{
+  "name": "trabalho_crud_usuarios",
+  "version": "1.0.0",
+  "description": "Trabalho do curso de sistemas para internet para realização de um CRUD",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardo-figueira/trabalho_crud_usuarios.git"
+  },
+  "author": "Leonardo Vicente Figueira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardo-figueira/trabalho_crud_usuarios/issues"
+  },
+  "homepage": "https://github.com/leonardo-figueira/trabalho_crud_usuarios#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}
