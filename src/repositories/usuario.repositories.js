@@ -1,12 +1,13 @@
 import db from '../config/database.js';
 
 db.run(`
-    CREATE TABLE IF NOT EXISTS usuarios
-    id INTEGER PRIMARY KEY AUTO INCREMENT,
-    login TEXT NOT NULL UNIQUE,
-    email TEXT NOT NULL UNIQUE,
-    senha TEXT NOT NULL,
-    foto TEXT
+    CREATE TABLE IF NOT EXISTS usuarios (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        login TEXT NOT NULL UNIQUE,
+        email TEXT NOT NULL UNIQUE,
+        senha TEXT NOT NULL,
+        foto TEXT
+    )
 `);
 
 function createUsuarioRepository(novoUsuario) {
@@ -20,17 +21,18 @@ function createUsuarioRepository(novoUsuario) {
 
     return new Promise((resolve, reject) => {
         db.run(`
-            INSERT INTO usuarios(username, email, password, avatar)
-            valuse
+            INSERT INTO usuarios(login, email, senha, foto)
+            values
             (?, ?, ?, ?)
             `,
             [login, email, senha, foto],
             (error) => {
                 if (error) {
-                    PromiseRejectionEvent(err);
+                    reject(error);
                 } else {
                     resolve({
-                        message: "Usuário criado"
+                        id: this.lastId,
+                        ...novoUsuario
                     });
                 }
             }
